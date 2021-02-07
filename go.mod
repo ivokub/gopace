@@ -1,4 +1,4 @@
-module github.com/ivokub/go-pace-esteid
+module github.com/ivokub/gopace
 
 go 1.15
 
