@@ -78,19 +78,3 @@ func TestPrepare(t *testing.T) {
 		}
 	}
 }
-
-func TestTransmit(t *testing.T) {
-	pcard, cancel, err := Connect()
-	if err != nil {
-		t.Fatalf("Establish context: %v+", err)
-		return
-	}
-	defer cancel()
-	scard, err := PACE(pcard, canReal)
-	if err != nil {
-		t.Fatalf("PACE: %v+", err)
-	}
-	if err = ReadPersonalDFEntries(scard); err != nil {
-		t.Errorf("Error reading DF entries: %v", err)
-	}
-}

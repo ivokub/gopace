@@ -11,9 +11,6 @@ type PlainCard struct {
 	card *scard.Card
 }
 
-var EsteIDApplication = []byte{0xa0, 0x00, 0x00, 0x00, 0x77, 0x01, 0x08, 0x00, 0x07, 0x00, 0x00, 0xFE, 0x00,
-	0x00, 0x01}
-
 func Connect() (pcard *PlainCard, cancel func(), err error) {
 	context, err := scard.EstablishContext()
 	if err != nil {
